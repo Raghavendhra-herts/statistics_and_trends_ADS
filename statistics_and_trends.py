@@ -27,7 +27,6 @@ def prepare_co2_data():
     return read_data_co2
 
 
-
 def prepare_electric_data():
     '''
     In this function I'm preparing to read the dataset in a .csv format taken 
@@ -81,7 +80,6 @@ def change_the_columns(data):
     return data
 
 
-
 def transpose_data(get_t_data):
     '''
     
@@ -118,11 +116,11 @@ def plot_line_graph(data):
     
     # convert index into numeric by pd.to_numeric
     df_t_index = pd.to_numeric(data.index)
-    #print("\n", df_t_index)
     
     # line plot for CO2 emission dataset for selected 5 countries from(2000-2015)
     # using grid() for configuring the grid lines
     plt.grid()
+    
     # calling the plot() and sending the required columns to produce line graph
     plt.plot(df_t_index, data['United Kingdom'], label = 'UK')
     plt.plot(df_t_index, data['Russian Federation'], label = 'Russian')
