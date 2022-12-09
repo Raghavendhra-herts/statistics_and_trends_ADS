@@ -11,13 +11,7 @@ import matplotlib.pyplot as plt
 
 
 def prepare_co2_data():
-    '''
-    In this function I'm preparing to read the dataset in a .csv format taken 
-    from the Worldbank
-    and returning the dataset 
     
-    This is the first dataset i.e CO2 emission(metric ton per_capita)
-    '''
     # reading the csv dataset through pd.read_csv
     read_data_co2 = pd.read_csv("CO2 emission(metric ton per_capita).csv")
     #Dropping the coulmns from dataset which is unnecessary
@@ -156,6 +150,7 @@ def plot_bar_graph(data):
     
     # calling the bar graph by sending the values to display in the graph 
     data.plot( y = ['United Kingdom', 'Russian Federation','Japan', 'India', 'France'], kind = 'bar', figsize = (10,5))
+    plt.title("")
     # display the title on x-axis through .xlabel()
     plt.xlabel("Year")
     # display the title on y-axis through .ylabel()
@@ -164,6 +159,25 @@ def plot_bar_graph(data):
     plt.show()
     
 
+def plot_pie_graph(data):
+    '''
+    
+    In this function I'm passing  data attribute to represent the pie graph
+    Im using this function to display the pie graph for five different countries    
+
+    '''
+    # convert the five columns data type from object to numeric by pd.to_numeric()
+    data['United Kingdom'] = pd.to_numeric(data['United Kingdom'])
+    data['Russian Federation'] = pd.to_numeric(data['Russian Federation'])
+    data['Japan'] = pd.to_numeric(data['Japan'])
+    data['India'] = pd.to_numeric(data['India'])
+    data['France'] = pd.to_numeric(data['France'])
+    
+    # convert index into numeric by pd.to_numeric
+    df_t_index = pd.to_numeric(data.index)
+    
+    c = data.groupby(['United Kingdom','Russian Federation','Japan', 'India', 'France']).mean()
+    print(c)
 
 if __name__ == "__main__":
     
@@ -186,7 +200,7 @@ if __name__ == "__main__":
     # transposing the data for second dataset i.e Electric_Power_Consumption
     electric_data_t = transpose_data(electric_emission_data)
     #print(electric_data_t)
-    
+    '''
     # calling function to plot line-graph for CO2-emission dataset
     plot_line_graph(co2_data_t)
     
@@ -198,3 +212,6 @@ if __name__ == "__main__":
     
     # calling the function to plot_bar_graph for Electric_Power_Consumption dataset for selected columns
     plot_bar_graph(electric_data_t)
+    '''
+    # calling bar graph for CO2 Emission
+    plot_pie_graph(co2_data_t)
