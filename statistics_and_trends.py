@@ -171,9 +171,11 @@ def plot_bar_graph(data, title, y_label):
 if __name__ == "__main__":
     
     # calling prepare_co2_data function to return the dataset 
+    # I can prepare and call this functionn for new dataset
     co2_data = prepare_co2_data()
     
     # calling electric_emission_data function to return the dataset
+    # I can prepare and call this functionn for new dataset
     electric_emission_data = prepare_electric_data()
     
     # fill the null values for selected column through fill_null_values( by passing the dataset)
@@ -185,6 +187,7 @@ if __name__ == "__main__":
     electric_emission_data = change_the_columns(electric_emission_data)
     
     # transposing the data for first dataset i.e CO2-Emission
+    # I can call this transpose at any time in the code and also can pass new parameter to transpose the data
     co2_data_t = transpose_data(co2_data)
     # transposing the data for second dataset i.e Electric_Power_Consumption
     electric_data_t = transpose_data(electric_emission_data)
