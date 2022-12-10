@@ -33,7 +33,7 @@ def prepare_electric_data():
     from the Worldbank
     and returning the dataset 
     
-    This is second dataset i.e electric_power_consumption(per capita)
+    This is second dataset i.e electric_power_consumption(kWh per capita)
 
     '''
     
