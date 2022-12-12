@@ -19,6 +19,7 @@ def prepare_co2_data():
     This is the first dataset i.e CO2 emission(metric ton per_capita)
     '''
     # reading the csv dataset through pd.read_csv
+    # update the dataset here of your choice to check the data
     read_data_co2 = pd.read_csv("CO2 emission(metric ton per_capita).csv")
     #Dropping the coulmns from dataset which is unnecessary
     read_data_co2 = read_data_co2.drop(columns=['Series Name','Series Code','Country Code'])
@@ -38,7 +39,8 @@ def prepare_electric_data():
     '''
     
     # reading the csv dataset through pd.read_csv
-    read_data_electric = pd.read_csv("electric_power_consumption(per capita).csv")
+    # update the dataset here of your choice to check the data
+    read_data_electric = pd.read_csv("electric_power_consumption(kWh per capita).csv")
     #print(read_data_electric)
     #Dropping the coulmns from dataset which is unnecessary
     read_data_electric = read_data_electric.drop(columns=['Series Name','Series Code','Country Code',])
